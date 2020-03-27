@@ -70,12 +70,12 @@
   - `libinput-gestures-setup autostart` to automatically run at login; `libinput-gestures-setup start` to run now
   - Remove Plank icon from Plank dock: `gsettings set net.launchpad.plank.dock.settings:/net/launchpad/plank/docks/dock- 1/ show-dock-item false`
 - Power Management -> brightness controls
-
-# Todo 
-
 - Install custom mate-indicator-applet with no hotkeys from source.
   - `cd ~/Developer`; `git clone https://github.com/mdmayfield/mate-indicator-applet.git`; `cd mate-indicator-applet`
   - `sudo apt build-dep mate-indicator-applet`; `./autogen.sh --with-ubuntu-indicators`; `make`; `sudo make install`
   - Log out/in or restart
+- `gsettings set com.canonical.indicator.datetime custom-time-format '%l:%M %p'`
+
+# Todo 
 
 - Follow https://gitlab.com/francois.kneib/clevo-N151ZU-fan-controller
