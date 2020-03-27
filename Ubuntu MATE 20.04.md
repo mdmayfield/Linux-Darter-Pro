@@ -51,10 +51,19 @@
   - `cd ~/Developer`; `git clone https://github.com/bulletmark/libinput-gestures.git`; `cd libinput-gestures`; `sudo make install`
   - in `~/.config/libinput-gestures.conf`:
   ```
-  gesture swipe up	xdotool key super+alt+Up
-  gesture swipe down	xdotool key super+alt+Down
-  gesture swipe left	xdotool key super+alt+Left
-  gesture swipe right	xdotool key super+alt+Right
+  gesture swipe up        3 xdotool key super+alt+Up
+  gesture swipe down      3 xdotool key super+alt+Down
+  gesture swipe left      3 xdotool key super+alt+Left
+  gesture swipe right     3 xdotool key super+alt+Right
+
+  gesture swipe up        4 xdotool key shift+super+alt+Up
+  gesture swipe down      4 xdotool key shift+super+alt+Down
+  gesture swipe left      4 xdotool key shift+super+alt+Left
+  gesture swipe right     4 xdotool key shift+super+alt+Right
+
+  gesture pinch in        4 xdotool key super+s
+  gesture pinch out       4 xdotool key super+s
+
   swipe_threshold 200
   ```
   - `libinput-gestures-setup autostart` to automatically run at login; `libinput-gestures-setup start` to run now
