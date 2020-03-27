@@ -32,7 +32,7 @@
 - ~~**Experimental:** Instead of custom keyboard layout, using Options in Keyboard Preferences -> Layouts. **Alt/Win Behavior** Ctrl is mapped to Alt; Alt is mapped to Win / **Miscellaneous Compatibility Options** Numeric keypad always enters digits (as in macOS) / **Position of Compose key** Menu~~
 - ~~Arrows and Delete are unaffected......~~
 - Keyboard map: download "custom-darp", save as `~/.config/custom-darp.xkbmap`
-- put in `~/.xsessionrc`: `(sleep 4 ; xkbcomp $HOME/.config/custom-darp.xkbmap $DISPLAY) &` (not sure why the sleep is necessary these days, but noticed it a few weeks ago on 20.04)
+- put in `~/.xsessionrc`: `(sleep 4 ; xkbcomp $HOME/.config/custom-darp.xkbmap $DISPLAY; xset -r 105) &` (not sure why the sleep is necessary these days, but noticed it a few weeks ago on 20.04. xset -r 105 turns off autorepeat for right Control which we're using as a Compose/Multi key. For some reason repeat=false in the xkb file doesn't work.)
 - `gsettings set com.solus-project.brisk-menu hot-key '<Control>space'`
 - `sudo apt install autokey-gtk`; run Autokey, quit. Swap in `mdmayfield/Linux-XPS-15/autokey/data` for `~/.config/autokey/data`. Manually add AutoKey as `autokey` to Startup Items.
 # TODO: figure out script error on system.exec_command
