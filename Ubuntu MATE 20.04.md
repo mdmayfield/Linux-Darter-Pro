@@ -35,7 +35,7 @@
 - `sudo apt install autokey-gtk`; run Autokey, quit. Swap in `mdmayfield/Linux-XPS-15/autokey/data` for `~/.config/autokey/data`. Manually add AutoKey as `autokey` to Startup Items.
 - Replace ~/.mozilla/firefox folder with backup from previous installation (`magic-wormhole` is good for this)
 - Add to ~/.profile: `# enable smooth scrolling in Firefox  \n  export MOZ_USE_XINPUT2=1`
-- Turn off Bluetooth at system startup: create `/etc/rc.local` and make it executable - systemd will run it. This is the same as doing "Turn Bluetooth Off" and it can be turned back on by the applet:
+- ~~Turn off Bluetooth at system startup: create `/etc/rc.local` and make it executable - systemd will run it. This is the same as doing "Turn Bluetooth Off" and it can be turned back on by the applet:~~ *This doesn't seem to work*
   ```
   #!/bin/bash
   rfkill block bluetooth
@@ -78,3 +78,4 @@
 - Follow https://gitlab.com/francois.kneib/clevo-N151ZU-fan-controller
 - *The touchpad is annoyingly slow when moving finger quickly, and too fast when moving finger slowly. Look into this*
 - In AutoKey, figure out script error on system.exec_command
+- Find a reliable way to disable Bluetooth at startup while allowing it to be enabled from the menu
