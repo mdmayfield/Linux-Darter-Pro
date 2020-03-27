@@ -61,15 +61,21 @@
   gesture swipe left      4 xdotool key shift+super+alt+Left
   gesture swipe right     4 xdotool key shift+super+alt+Right
 
-  gesture pinch in        4 xdotool key super+s
-  gesture pinch out       4 xdotool key super+s
+  #gesture pinch in        4 xdotool key super+s
+  #gesture pinch out       4 xdotool key super+s
 
   swipe_threshold 200
   ```
+  - Doesn't seem to work with > 2-finger pinches?
   - `libinput-gestures-setup autostart` to automatically run at login; `libinput-gestures-setup start` to run now
   - Remove Plank icon from Plank dock: `gsettings set net.launchpad.plank.dock.settings:/net/launchpad/plank/docks/dock- 1/ show-dock-item false`
 - Power Management -> brightness controls
 
-- Remove Indicator-Applet-Complete from dock, ???
+# Todo 
+
+- Install custom mate-indicator-applet with no hotkeys from source.
+  - `cd ~/Developer`; `git clone https://github.com/mdmayfield/mate-indicator-applet.git`; `cd mate-indicator-applet`
+  - `sudo apt build-dep mate-indicator-applet`; `./autogen.sh --with-ubuntu-indicators`; `make`; `sudo make install`
+  - Log out/in or restart
 
 - Follow https://gitlab.com/francois.kneib/clevo-N151ZU-fan-controller
