@@ -28,3 +28,5 @@
 - Plank theme: Matte
 - Configure HUD: `gsettings set org.mate.hud shortcut '<Super>space'` then enable in MATE Tweak
 # TODO: date in menubar
+- `sudo apt install papirus-icon-theme`
+- In Appearance, choose BlueSubmarine then Customize to Icons: Papirus-dark, Pointer: MATE (Black)
