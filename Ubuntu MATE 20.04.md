@@ -30,3 +30,5 @@
 # TODO: date in menubar
 - `sudo apt install papirus-icon-theme`
 - In Appearance, choose BlueSubmarine then Customize to Icons: Papirus-dark, Pointer: MATE (Black)
+- **Experimental:** Instead of custom keyboard layout, using Options in Keyboard Preferences -> Layouts. **Alt/Win Behavior** Ctrl is mapped to Alt; Alt is mapped to Win / **Miscellaneous Compatibility Options** Numeric keypad always enters digits (as in macOS) / **Position of Compose key** Menu
+- Arrows and Delete are unaffected......
