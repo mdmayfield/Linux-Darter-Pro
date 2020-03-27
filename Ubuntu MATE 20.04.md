@@ -74,7 +74,7 @@
   - `cd ~/Developer`; `git clone https://github.com/mdmayfield/mate-indicator-applet.git`; `cd mate-indicator-applet`
   - `sudo apt build-dep mate-indicator-applet`; `./autogen.sh --with-ubuntu-indicators`; `make`; `sudo make install`
   - Log out/in or restart
-- `gsettings set com.canonical.indicator.datetime custom-time-format '%l:%M %p'`
+- Use indicator-applet and separate clock to get desired format
 
 # Todo 
 
