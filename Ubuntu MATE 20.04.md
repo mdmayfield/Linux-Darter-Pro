@@ -21,3 +21,10 @@
 - Set up Time And Date control panel to keep sync with Internet time servers. First `sudo apt install ntp` then change Control Panel. (Why on Earth don't they install ntp automatically, or at least give a newbie-friendly error message? I knew what to do but a new user wouldn't.)
 - Touchpad. *ugh, I do not like it compared to the XPS 15.* set up horiz + vert scrolling, two- and three-finger click/tap, turn off edge scrolling, turn off ~~*"nAtUraL"*~~ scrolling
 - `sudo apt install compizconfig-settings-manager compiz-mate compiz`
+- MATE Tweak: Cupertino layout, Compiz. (Windows weren't decorated after switching to Compiz... everything was messed up. Going to try importing settings, or see if a package is missing.) Also tried installing `compiz-plugins-main-default compiz-plugins-main compiz-plugins-extra` but no change.
+- CompizConfig -> Preferences -> Backend: GSettings Configuration
+- Download https://github.com/mdmayfield/Linux-XPS-15/blob/master/UbuntuMATE1804CompizDefaults181214.profile and import it
+- `gsettings set com.solus-project.brisk-menu window-type 'classic'` to disable fullscreen Brisk Menu
+- Plank theme: Matte
+- Configure HUD: `gsettings set org.mate.hud shortcut '<Super>space'` then enable in MATE Tweak
+# TODO: date in menubar
