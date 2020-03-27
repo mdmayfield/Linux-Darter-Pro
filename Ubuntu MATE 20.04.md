@@ -3,7 +3,6 @@
 - Wiped internal SSD and installed Ubuntu MATE 20.04
 - `sudo apt update`; `sudo apt upgrade`
 - `sudo apt install tlp tlp-rdw powertop`; `sudo powertop` and leave running to monitor battery. 5ish W while idle
-- *The touchpad is annoyingly slow when moving finger quickly, and too fast when moving finger slowly. Look into this*
 - `sudo apt install build-essential git x11proto-core-dev libx11-dev libxt-dev libxfixes-dev libxi-dev`  
 - `git config --global user.email "mdmayfield@users.noreply.github.com"`; `git config --global user.name "Matt Mayfield"`
 - Make and install xbanish:
@@ -26,7 +25,6 @@
 - `gsettings set com.solus-project.brisk-menu window-type 'classic'` to disable fullscreen Brisk Menu
 - Plank theme: Matte
 - Configure HUD: `gsettings set org.mate.hud shortcut '<Super>space'` then enable in MATE Tweak
-# TODO: date in menubar
 - `sudo apt install papirus-icon-theme`
 - In Appearance, choose BlueSubmarine then Customize to Icons: Papirus, Pointer: MATE (Black)
 - ~~**Experimental:** Instead of custom keyboard layout, using Options in Keyboard Preferences -> Layouts. **Alt/Win Behavior** Ctrl is mapped to Alt; Alt is mapped to Win / **Miscellaneous Compatibility Options** Numeric keypad always enters digits (as in macOS) / **Position of Compose key** Menu~~
@@ -35,7 +33,6 @@
 - put in `~/.xsessionrc`: `(sleep 4 ; xkbcomp $HOME/.config/custom-darp.xkbmap $DISPLAY; xset -r 105) &` (not sure why the sleep is necessary these days, but noticed it a few weeks ago on 20.04. xset -r 105 turns off autorepeat for right Control which we're using as a Compose/Multi key. For some reason repeat=false in the xkb file doesn't work.)
 - `gsettings set com.solus-project.brisk-menu hot-key '<Control>space'`
 - `sudo apt install autokey-gtk`; run Autokey, quit. Swap in `mdmayfield/Linux-XPS-15/autokey/data` for `~/.config/autokey/data`. Manually add AutoKey as `autokey` to Startup Items.
-# TODO: figure out script error on system.exec_command
 - Replace ~/.mozilla/firefox folder with backup from previous installation (`magic-wormhole` is good for this)
 - Add to ~/.profile: `# enable smooth scrolling in Firefox  \n  export MOZ_USE_XINPUT2=1`
 - Turn off Bluetooth at system startup: create `/etc/rc.local` and make it executable - systemd will run it. This is the same as doing "Turn Bluetooth Off" and it can be turned back on by the applet:
@@ -79,3 +76,5 @@
 # Todo 
 
 - Follow https://gitlab.com/francois.kneib/clevo-N151ZU-fan-controller
+- *The touchpad is annoyingly slow when moving finger quickly, and too fast when moving finger slowly. Look into this*
+- In AutoKey, figure out script error on system.exec_command
