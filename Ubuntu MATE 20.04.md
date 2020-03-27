@@ -35,4 +35,28 @@
 - Keyboard map: download "custom-darp", save as `~/.config/custom-darp.xkbmap`
 - put in `~/.xsessionrc`: `(sleep 4 ; xkbcomp $HOME/.config/custom-darp.xkbmap $DISPLAY) &` (not sure why the sleep is necessary these days, but noticed it a few weeks ago on 20.04)
 - `gsettings set com.solus-project.brisk-menu hot-key '<Control>space'`
-- `sudo apt install autokey-gtk`; run Autokey, quit. Swap in `mdmayfield/Linux-XPS-15/autokey/data` for `~/.config/autokey/data`. Manually add it to Startup Items. Tried the command `(autokey &)` to avoid the issue where Ctrl-N on desktop pops up both ~ and the AutoKey config window; didn't work. Instead, for script within AutoKey, using `dbus-send --session --type=method_call --dest="org.freedesktop.FileManager1" "/org/freedesktop/FileManager1" "org.freedesktop.FileManager1.ShowFolders" array:string:"file://$HOME" string:""`
+- `sudo apt install autokey-gtk`; run Autokey, quit. Swap in `mdmayfield/Linux-XPS-15/autokey/data` for `~/.config/autokey/data`. Manually add AutoKey as `autokey` to Startup Items.
+# TODO: figure out script error on system.exec_command
+- Replace ~/.mozilla/firefox folder with backup from previous installation (`magic-wormhole` is good for this)
+- Add to ~/.profile: `# enable smooth scrolling in Firefox  \n  export MOZ_USE_XINPUT2=1`
+- Turn off Bluetooth at system startup: create `/etc/rc.local` and make it executable - systemd will run it. This is the same as doing "Turn Bluetooth Off" and it can be turned back on by the applet:
+  ```
+  #!/bin/bash
+  rfkill block bluetooth
+  exit 0
+  ```
+- Set up libinput-gestures:
+  - `sudo gpasswd -a $USER input` to add self to input group
+  - `sudo apt install xdotool wmctrl`
+  - Since I compiled my own libinput the tools are pre-installed. If I hadn't and were using libinput from the repo, I would also `sudo apt install libinput-tools`.
+  - `cd ~/Developer`; `git clone https://github.com/mdmayfield/libinput-gestures.git`; `cd libinput-gestures`; `sudo make install`
+  - in `~/.config/libinput-gestures.conf`:
+  ```
+  gesture swipe up	xdotool key super+alt+Up
+  gesture swipe down	xdotool key super+alt+Down
+  gesture swipe left	xdotool key super+alt+Left
+  gesture swipe right	xdotool key super+alt+Right
+  swipe_threshold 300
+  ```
+  - `libinput-gestures-setup autostart` to automatically run at login; `libinput-gestures-setup start` to run now
+  - Remove Plank icon from Plank dock: `gsettings set net.launchpad.plank.dock.settings:/net/launchpad/plank/docks/dock1/ show-dock-item false`
