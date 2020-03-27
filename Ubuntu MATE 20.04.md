@@ -55,10 +55,12 @@
   gesture swipe down	xdotool key super+alt+Down
   gesture swipe left	xdotool key super+alt+Left
   gesture swipe right	xdotool key super+alt+Right
-  swipe_threshold 300
+  swipe_threshold 200
   ```
   - `libinput-gestures-setup autostart` to automatically run at login; `libinput-gestures-setup start` to run now
   - Remove Plank icon from Plank dock: `gsettings set net.launchpad.plank.dock.settings:/net/launchpad/plank/docks/dock- 1/ show-dock-item false`
+- Power Management -> brightness controls
+
 - Remove Indicator-Applet-Complete from dock, ???
 
 - Follow https://gitlab.com/francois.kneib/clevo-N151ZU-fan-controller
