@@ -1,6 +1,6 @@
 xkb_keymap {
 	xkb_keycodes  { include "evdev+aliases(qwerty)"	};
-	xkb_types     { include "complete"	
+	xkb_types     { include "complete+numpad(mac)"	
 		type "CMD_OPT_HELD" {
 		  modifiers = Alt+Control;
 		  map[None] = Level1;
