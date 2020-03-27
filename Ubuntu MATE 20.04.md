@@ -79,3 +79,4 @@
 - *The touchpad is annoyingly slow when moving finger quickly, and too fast when moving finger slowly. Look into this*
 - In AutoKey, figure out script error on system.exec_command
 - Find a reliable way to disable Bluetooth at startup while allowing it to be enabled from the menu
+- Figure out the top-pixel-row unreliable thing (There was a bug in X with negative fractional pixel values, or something? Was investigating this on the desktop a while ago. I believe I worked around it there by telling the panel app to fall back to an earlier Xinput or something)
