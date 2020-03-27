@@ -1,6 +1,5 @@
 - Battery/power saving; check if TLP and/or Powertop are as relevant as they were
-- System76 drivers for keyboard backlight?
-
+- ~~System76 drivers for keyboard backlight?~~ Not needed it seems
 - Wiped internal SSD and installed Ubuntu MATE 20.04
 - `sudo apt update`; `sudo apt upgrade`
 - `sudo apt install tlp tlp-rdw powertop`; `sudo powertop` and leave running to monitor battery. 5ish W while idle
@@ -59,4 +58,7 @@
   swipe_threshold 300
   ```
   - `libinput-gestures-setup autostart` to automatically run at login; `libinput-gestures-setup start` to run now
-  - Remove Plank icon from Plank dock: `gsettings set net.launchpad.plank.dock.settings:/net/launchpad/plank/docks/dock1/ show-dock-item false`
+  - Remove Plank icon from Plank dock: `gsettings set net.launchpad.plank.dock.settings:/net/launchpad/plank/docks/dock- 1/ show-dock-item false`
+- Remove Indicator-Applet-Complete from dock, ???
+
+- Follow https://gitlab.com/francois.kneib/clevo-N151ZU-fan-controller
