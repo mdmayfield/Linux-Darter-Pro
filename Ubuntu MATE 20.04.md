@@ -29,7 +29,10 @@
 - Configure HUD: `gsettings set org.mate.hud shortcut '<Super>space'` then enable in MATE Tweak
 # TODO: date in menubar
 - `sudo apt install papirus-icon-theme`
-- In Appearance, choose BlueSubmarine then Customize to Icons: Papirus-dark, Pointer: MATE (Black)
+- In Appearance, choose BlueSubmarine then Customize to Icons: Papirus, Pointer: MATE (Black)
 - ~~**Experimental:** Instead of custom keyboard layout, using Options in Keyboard Preferences -> Layouts. **Alt/Win Behavior** Ctrl is mapped to Alt; Alt is mapped to Win / **Miscellaneous Compatibility Options** Numeric keypad always enters digits (as in macOS) / **Position of Compose key** Menu~~
 - ~~Arrows and Delete are unaffected......~~
-- Keyboard map: download "custom-darp"
+- Keyboard map: download "custom-darp", save as `~/.config/custom-darp.xkbmap`
+- put in `~/.xsessionrc`: `(sleep 4 ; xkbcomp $HOME/.config/custom-darp.xkbmap $DISPLAY) &` (not sure why the sleep is necessary these days, but noticed it a few weeks ago on 20.04)
+- `gsettings set com.solus-project.brisk-menu hot-key '<Control>space'`
+- `sudo apt install autokey-gtk`; run Autokey, quit. Swap in `mdmayfield/Linux-XPS-15/autokey/data` for `~/.config/autokey/data`. Manually add it to Startup Items. Tried the command `(autokey &)` to avoid the issue where Ctrl-N on desktop pops up both ~ and the AutoKey config window; didn't work. Instead, for script within AutoKey, using `dbus-send --session --type=method_call --dest="org.freedesktop.FileManager1" "/org/freedesktop/FileManager1" "org.freedesktop.FileManager1.ShowFolders" array:string:"file://$HOME" string:""`
