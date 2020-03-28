@@ -99,7 +99,7 @@ touchpad_accel_profile_linear(struct motion_filter *filter,
 	return factor * TP_MAGIC_SLOWDOWN;
 }
 ```
-- Install pulseeffects to help overcome the terrible terrible speakers
+- Install pulseeffects to help overcome the terrible terrible speakers. `Darter-Pro6.json` goes in `~/.config/PulseEffects/output`.
 
 
 # Todo 
