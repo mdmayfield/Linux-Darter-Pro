@@ -76,7 +76,34 @@
 # Todo 
 
 - Follow https://gitlab.com/francois.kneib/clevo-N151ZU-fan-controller
-- *The touchpad is annoyingly slow when moving finger quickly, and too fast when moving finger slowly. Look into this*
 - In AutoKey, figure out script error on system.exec_command
 - Find a reliable way to disable Bluetooth at startup while allowing it to be enabled from the menu
-- Figure out the top-pixel-row unreliable thing (There was a bug in X with negative fractional pixel values, or something? Was investigating this on the desktop a while ago. I believe I worked around it there by telling the panel app to fall back to an earlier Xinput or something)
+- Figure out the top-pixel-row unreliable thing (There was a bug in X with negative fractional pixel values, or something? Was investigating this on the desktop a while ago. I believe I worked around it there by telling the panel app to fall back to an earlier Xinput or something) *from debug I added to libinput, Y coords are being fractional unlike the XPS 15...*
+- Disable Ethernet until needed? drawing a lot of power
+
+In libinput/src/fliter-touchpad.c, replace this function:
+
+```
+double
+touchpad_accel_profile_linear(struct motion_filter *filter,
+			      void *data,
+			      double speed_in, /* in device units/µs */
+			      uint64_t time)
+{
+	struct touchpad_accelerator *accel_filter =
+		(struct touchpad_accelerator *)filter;
+
+	double factor; /* unitless */
+
+	/* Convert to mm/s because that's something one can understand */
+	speed_in = v_us2s(speed_in) * 25.4/accel_filter->dpi;
+
+    factor = (speed_in * 0.0135) + 0.2; // magic
+	
+	//printf("speed_in=%.4f factor=%.4f threshold=%.4f\n", speed_in, factor, threshold);
+	
+
+	factor *= accel_filter->speed_factor;
+	return factor * TP_MAGIC_SLOWDOWN;
+}
+```
