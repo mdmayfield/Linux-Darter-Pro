@@ -73,14 +73,6 @@
   - Log out/in or restart
 - Use indicator-applet and separate clock to get desired format
 
-# Todo 
-
-- Follow https://gitlab.com/francois.kneib/clevo-N151ZU-fan-controller
-- In AutoKey, figure out script error on system.exec_command
-- Find a reliable way to disable Bluetooth at startup while allowing it to be enabled from the menu
-- Figure out the top-pixel-row unreliable thing (There was a bug in X with negative fractional pixel values, or something? Was investigating this on the desktop a while ago. I believe I worked around it there by telling the panel app to fall back to an earlier Xinput or something) *from debug I added to libinput, Y coords are being fractional unlike the XPS 15...*
-- Disable Ethernet until needed? drawing a lot of power
-
 In libinput/src/fliter-touchpad.c, replace this function:
 
 ```
@@ -107,3 +99,13 @@ touchpad_accel_profile_linear(struct motion_filter *filter,
 	return factor * TP_MAGIC_SLOWDOWN;
 }
 ```
+- Install pulseeffects to help overcome the terrible terrible speakers
+
+
+# Todo 
+
+- Follow https://gitlab.com/francois.kneib/clevo-N151ZU-fan-controller
+- In AutoKey, figure out script error on system.exec_command
+- Find a reliable way to disable Bluetooth at startup while allowing it to be enabled from the menu
+- Figure out the top-pixel-row unreliable thing (There was a bug in X with negative fractional pixel values, or something? Was investigating this on the desktop a while ago. I believe I worked around it there by telling the panel app to fall back to an earlier Xinput or something) *from debug I added to libinput, Y coords are being fractional unlike the XPS 15...*
+- Disable Ethernet until needed? drawing a lot of power
